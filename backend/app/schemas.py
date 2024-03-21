@@ -1,13 +1,14 @@
 from pydantic import BaseModel
 
 
-class imposter_in(BaseModel):
-    num_of_imposter: int
+class create_room(BaseModel):
+    owner_name: str
+    imposters: int
 
 
 class player(BaseModel):
-    name: str
-    verify: str
+    player_name: str
+    room_number: str
 
 
 class game_room(BaseModel):
