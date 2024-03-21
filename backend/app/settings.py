@@ -2,7 +2,7 @@ import datetime
 import random
 import string
 from utils import ConnectionManager
-from fastapi import websockets
+
 
 # A Temporary dataStructure to hold all the game's key information.
 temporary_rooms: dict = {}
@@ -11,7 +11,7 @@ places = ['Hotel', 'Museum', 'Amusement Park',
           'Dog Park', 'Gas Station', 'Resturant']
 
 class Room:
-    def __init__(self, owner, imposters) -> None:
+    def __init__(self, owner: tuple, imposters: int) -> None:
         # Room Name:
         self.room_number: str = self.generate_random_string()
         # Define expiration time for rooms (in seconds)
